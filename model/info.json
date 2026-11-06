@@ -1,0 +1,25 @@
+{
+  "model_type": "Logistic Regression",
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "test_accuracy": 0.8033,
+  "training_rows": 241,
+  "test_rows": 61,
+  "target": {
+    "0": "absence",
+    "1": "presence"
+  }
+}
