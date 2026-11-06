@@ -4,6 +4,10 @@ A simple FastAPI app that predicts heart disease using Logistic Regression.
 
 GitHub repository: [Chowx30/heart-disease-api](https://github.com/Chowx30/heart-disease-api).
 
+Render URL: [https://heart-disease-api-vfa4.onrender.com](https://heart-disease-api-vfa4.onrender.com).
+
+Swagger UI: [https://heart-disease-api-vfa4.onrender.com/docs](https://heart-disease-api-vfa4.onrender.com/docs).
+
 ## Dataset and model
 
 Dataset: [Heart Disease Dataset on Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset).
@@ -89,7 +93,19 @@ curl -X POST http://localhost:8000/predict -H "Content-Type: application/json" -
 
 The sample request returns `{"heart_disease": false}`. Invalid or missing features return HTTP 422.
 
+To test the deployed app:
+
+```bash
+curl https://heart-disease-api-vfa4.onrender.com/health
+curl https://heart-disease-api-vfa4.onrender.com/info
+curl -X POST https://heart-disease-api-vfa4.onrender.com/predict -H "Content-Type: application/json" -d @sample.json
+```
+
 You can also open `/docs`, expand `POST /predict`, select **Try it out**, paste the contents of `sample.json`, and click **Execute**.
+
+## Verification
+
+The API was tested locally using Python. Render successfully built and ran the Docker image. The live health, info, Swagger, and prediction endpoints returned HTTP 200. Both true and false predictions were checked, and invalid inputs returned HTTP 422. Local Docker Compose commands were not run because Docker was not installed on the test computer.
 
 ## Deploy on Render
 
@@ -106,12 +122,14 @@ The included `render.yaml` can also be used with **New → Blueprint**.
 
 ## Submission
 
-Submit these two links on the assignment page:
+Submission links:
 
-- GitHub repository URL containing this project.
-- Live Render service URL.
+- GitHub: https://github.com/Chowx30/heart-disease-api
+- Render: https://heart-disease-api-vfa4.onrender.com
 
-Before submitting, confirm the repository is public or accessible to your instructor, the model file is uploaded, and the live `/docs` and `/predict` endpoints work. Paste the two links into the assignment submission box and submit.
+On Ostad, paste the GitHub repository link into **Add URL** and click **SUBMIT**. This README contains the live deployment link for the instructor.
+
+The free Render instance may take about a minute to respond after being inactive.
 
 ## References
 
