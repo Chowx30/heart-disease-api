@@ -1,13 +1,5 @@
 # Heart Disease Prediction API
 
-A simple FastAPI app that predicts heart disease using Logistic Regression.
-
-GitHub repository: [Chowx30/heart-disease-api](https://github.com/Chowx30/heart-disease-api).
-
-Render URL: [https://heart-disease-api-vfa4.onrender.com](https://heart-disease-api-vfa4.onrender.com).
-
-Swagger UI: [https://heart-disease-api-vfa4.onrender.com/docs](https://heart-disease-api-vfa4.onrender.com/docs).
-
 ## Dataset and model
 
 Dataset: [Heart Disease Dataset on Kaggle](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset).
@@ -101,38 +93,5 @@ curl https://heart-disease-api-vfa4.onrender.com/info
 curl -X POST https://heart-disease-api-vfa4.onrender.com/predict -H "Content-Type: application/json" -d @sample.json
 ```
 
-You can also open `/docs`, expand `POST /predict`, select **Try it out**, paste the contents of `sample.json`, and click **Execute**.
 
-## Verification
 
-The API was tested locally using Python. Render successfully built and ran the Docker image. The live health, info, Swagger, and prediction endpoints returned HTTP 200. Both true and false predictions were checked, and invalid inputs returned HTTP 422. Local Docker Compose commands were not run because Docker was not installed on the test computer.
-
-## Deploy on Render
-
-1. Upload all project files to a GitHub repository, including the saved model. Include the hidden `.dockerignore` and `.gitignore` files.
-2. Sign in to [Render](https://dashboard.render.com/) and choose **New → Web Service**.
-3. Connect the GitHub repository, or use its public Git URL.
-4. Choose **Docker** as the language/runtime and the **Free** instance if available.
-5. Leave the root directory empty. Use `./Dockerfile` for the Dockerfile path and `.` for the build context.
-6. Set the health check path to `/health`. Leave the Docker start command empty; the Dockerfile already starts the app using Render's `PORT`.
-7. Click **Deploy Web Service** and wait for the service to become live.
-8. Open the service URL with `/health`, `/info`, and `/docs`. Test `/predict` using the Swagger UI or the curl command above with the live URL.
-
-The included `render.yaml` can also be used with **New → Blueprint**.
-
-## Submission
-
-Submission links:
-
-- GitHub: https://github.com/Chowx30/heart-disease-api
-- Render: https://heart-disease-api-vfa4.onrender.com
-
-On Ostad, paste the GitHub repository link into **Add URL** and click **SUBMIT**. This README contains the live deployment link for the instructor.
-
-The free Render instance may take about a minute to respond after being inactive.
-
-## References
-
-- [FastAPI request bodies](https://fastapi.tiangolo.com/tutorial/body/)
-- [Docker Compose](https://docs.docker.com/compose/gettingstarted/)
-- [Docker on Render](https://render.com/docs/docker)
